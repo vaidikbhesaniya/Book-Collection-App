@@ -11,7 +11,7 @@
 	],
 	"routes": [
 		{
-			"src": "/(.*)",
+			"src": "/books",
 			"dest": "index.js"
 		},
 		{
@@ -19,10 +19,6 @@
 			"dest": "dist/index.html"
 		},
 		{
-			"src": "/books",
-			"dest": "index.js"
-		},
-		{
 			"src": "/books/(.*)",
 			"dest": "index.js"
 		},
@@ -35,7 +31,7 @@
 			"dest": "dist/index.html"
 		},
 		{
-			"src": "/books/create/(.*)",
+			"src": "/books/create",
 			"dest": "dist/index.html"
 		},
 		{
@@ -43,16 +39,16 @@
 			"dest": "dist/index.html"
 		},
 		{
-			"src": "/books/details",
+			"src": "/books/edit/(.*)",
 			"dest": "dist/index.html"
 		},
 		{
-			"src": "/books/details/(.*)",
+			"src": "/books/delete/(.*)",
 			"dest": "dist/index.html"
 		},
 		{
 			"src": "/(.+)",
-			"dest": "dist/assests"
+			"dest": "dist/$1"
 		}
 	]
 }
