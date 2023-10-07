@@ -1,54 +1,16 @@
 {
-	"builds": [
-		{
-			"src": "index.js",
-			"use": "@vercel/node"
-		},
-		{
-			"src": "dist/**",
-			"use": "@vercel/static"
-		}
-	],
-	"routes": [
-		{
-			"src": "/books",
-			"dest": "index.js"
-		},
-		{
-			"src": "/",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books/(.*)",
-			"dest": "index.js"
-		},
-		{
-			"src": "/books/(.*)",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books/create",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books/details/(.*)",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books/edit/(.*)",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books/delete/(.*)",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/(.+)",
-			"dest": "dist/$1"
-		}
-	]
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["dist/**"] }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/index.js"
+    }
+  ]
 }
