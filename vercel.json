@@ -1,31 +1,31 @@
 {
 	"version": 2,
 	"builds": [
-	  {
-		"src": "dist/**",
-		"use": "@vercel/static"
-	  }
+		{
+			"src": "dist/**",
+			"use": "@vercel/static"
+		}
 	],
 	"routes": [
-	  {
-		"src": "/books/create",
-		"dest": "/dist/books/create.html"
-	  },
-	  {
-		"src": "/books/details/:id",
-		"dest": "/dist/books/details/:id.html"
-	  },
-	  {
-		"src": "/books/edit/:id",
-		"dest": "/dist/books/edit/:id.html"
-	  },
-	  {
-		"src": "/books/delete/:id",
-		"dest": "/dist/books/delete/:id.html"
-	  },
-	  {
-		"src": "/(.*)",
-		"dest": "/dist/index.html"
-	  }
+		{
+			"src": "/books/create",
+			"dest": "/dist/books/create.html"
+		},
+		{
+			"src": "/books/details/:id",
+			"dest": "/dist/books/details/:id.html"
+		},
+		{
+			"src": "/books/edit/:id",
+			"dest": "/dist/books/edit/:id.html"
+		},
+		{
+			"src": "/books/delete/:id",
+			"dest": "/dist/books/delete/:id.html"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "/dist/index.html"
+		}
 	]
-  }  
+}
