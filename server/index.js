@@ -1,10 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import { PORT, DB_URL } from "./config.js";
 import bookRouter from "./routes/bookRouter.js";
+import dotenv from "dotenv";
 const app = express();
 
+app.use(dotenv.config());
 app.use(cors());
 app.use(express.json());
 app.use(express.static("dist"));
@@ -14,10 +15,10 @@ app.use("*", (req, res) => {
 });
 
 mongoose
-	.connect(DB_URL)
+	.connect(process.env.DB_URL)
 	.then(() => {
 		console.log("Database Connected");
-		app.listen(PORT, () => {
+		app.listen(process.env.PORT, () => {
 			console.log(`Server started on port ${PORT}`);
 		});
 	})
