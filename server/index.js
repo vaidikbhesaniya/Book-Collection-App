@@ -9,6 +9,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("dist"));
 app.use("/books", bookRouter);
+app.use("*", (req, res) => {
+	res.sendFile(__dirname + "/dist/index.html");
+});
 
 mongoose
 	.connect(DB_URL)
