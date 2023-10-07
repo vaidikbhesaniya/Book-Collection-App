@@ -1,9 +1,6 @@
 {
+	"version": 2,
 	"builds": [
-		{
-			"src": "index.js",
-			"use": "@vercel/node"
-		},
 		{
 			"src": "dist/**",
 			"use": "@vercel/static"
@@ -11,48 +8,20 @@
 	],
 	"routes": [
 		{
-			"src": "/(.+)",
-			"dest": "index.js"
+			"src": "/books/create",
+			"dest": "/books/create.html"
 		},
 		{
-			"src": "/",
-			"dest": "dist/index.html"
+			"src": "/books/details/:id",
+			"dest": "/books/details/:id.html"
 		},
 		{
-			"src": "/books",
-			"dest": "index.js"
+			"src": "/books/edit/:id",
+			"dest": "/books/edit/:id.html"
 		},
 		{
-			"src": "/books/(.*)",
-			"dest": "index.js"
-		},
-		{
-			"src": "/books/(.*)",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books/create/(.*)",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books/details/(.*)",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books/details",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/books/details/(.*)",
-			"dest": "dist/index.html"
-		},
-		{
-			"src": "/(.+)",
-			"dest": "dist/assests"
+			"src": "/books/delete/:id",
+			"dest": "/books/delete/:id.html"
 		}
 	]
 }
